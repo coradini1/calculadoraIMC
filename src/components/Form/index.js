@@ -35,7 +35,7 @@ export default function Form() {
           style={styles.caixa}
           onChangeText={setHeight}
           value={height}
-          placeholder="Insira sua altura"
+          placeholder="   Ex: 1.90"
           keyboardType={"numeric"}
         />
         <Text>Peso</Text>
@@ -43,7 +43,7 @@ export default function Form() {
           style={styles.caixa}
           value={weight}
           onChangeText={setWeight}
-          placeholder="Insira seu Peso"
+          placeholder="   Ex: 80"
           keyboardType={"numeric"}
         />
         <Button
