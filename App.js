@@ -15,13 +15,10 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
+    border: "1px solid black",
     flex: 1,
     backgroundColor: "white",
     alignItems: "center",
     justifyContent: "center",
-  },
-  teste: {
-    fontSize: 30,
-    color: "black",
   },
 });

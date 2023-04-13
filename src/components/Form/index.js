@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, TextInput, Button } from "react-native";
 import ResultImc from "./ResultImc";
+import { StyleSheet } from "react-native";
 export default function Form() {
   const [height, setHeight] = useState(null);
   const [weight, setWeight] = useState(null);
@@ -31,6 +32,7 @@ export default function Form() {
       <View>
         <Text>Altura </Text>
         <TextInput
+          style={styles.caixa}
           onChangeText={setHeight}
           value={height}
           placeholder="Insira sua altura"
@@ -38,14 +40,29 @@ export default function Form() {
         />
         <Text>Peso</Text>
         <TextInput
+          style={styles.caixa}
           value={weight}
           onChangeText={setWeight}
           placeholder="Insira seu Peso"
           keyboardType={"numeric"}
         />
-        <Button onPress={() => validationImc()} title={textButton} />
+        <Button
+          color="black"
+          onPress={() => validationImc()}
+          title={textButton}
+        />
       </View>
       <ResultImc messageResultImc={messageImc} resultImc={imc} />
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  titulo: {
+    fontSize: 30,
+  },
+  caixa: {
+    borderWidth: 1,
+    margin: 5,
+  },
+});
