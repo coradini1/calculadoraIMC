@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import { View, Text, TextInput, Button } from "react-native";
 import ResultImc from "./ResultImc";
 import { StyleSheet } from "react-native";
+import styles from "./style";
 export default function Form() {
   const [height, setHeight] = useState(null);
   const [weight, setWeight] = useState(null);
-  const [messageImc, setMessageImc] = useState("preencha o peso e altura");
+  const [messageImc, setMessageImc] = useState("Preencha o peso e altura");
   const [imc, setImc] = useState(null);
   const [textButton, setTextButton] = useState("calcular");
 
@@ -28,22 +29,20 @@ export default function Form() {
   }
 
   return (
-    <View>
-      <View>
-        <Text>Altura </Text>
+    <View style={styles.formContext}>
+      <View style={styles.caixa}>
+        <Text style={styles.topicos}>Altura </Text>
         <TextInput
-          style={styles.caixa}
           onChangeText={setHeight}
           value={height}
-          placeholder="   Ex: 1.90"
+          placeholder="Ex: 1.90"
           keyboardType={"numeric"}
         />
-        <Text>Peso</Text>
+        <Text style={styles.topicos}>Peso</Text>
         <TextInput
-          style={styles.caixa}
           value={weight}
           onChangeText={setWeight}
-          placeholder="   Ex: 80"
+          placeholder="Ex: 80"
           keyboardType={"numeric"}
         />
         <Button
@@ -56,13 +55,3 @@ export default function Form() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  titulo: {
-    fontSize: 30,
-  },
-  caixa: {
-    borderWidth: 1,
-    margin: 5,
-  },
-});

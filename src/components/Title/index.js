@@ -1,16 +1,11 @@
 import React from "react";
 import { View, Text } from "react-native";
 import { StyleSheet } from "react-native";
+import styles from "./style";
 export default function Title() {
   return (
-    <View>
-      <Text style={styles.titulo}>IMC</Text>
+    <View style={styles.boxTitle}>
+      <Text style={styles.textTitle}>IMC</Text>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  titulo: {
-    fontWeight: "bold",
-  },
-});
